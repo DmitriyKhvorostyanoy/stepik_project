@@ -25,3 +25,11 @@ class ProductPage(BasePage):
         price_in_success_message = float(price_in_success_message_str[1:])
         assert product_price==price_in_success_message,"Price is different in the success message"
 
+    def should_not_be_success_message(self):
+        assert self.is_not_element_present(*ProductPageLocators.ADDED_PRODUCT_NAME), \
+            "Success message is presented, but should not be"
+
+    def should_be_disappeared_success_message(self):
+        assert self.is_disappeared(*ProductPageLocators.ADDED_PRODUCT_NAME), \
+            "Success message is presented, but should not be"
+
