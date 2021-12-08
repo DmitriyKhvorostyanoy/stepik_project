@@ -1,5 +1,3 @@
-import time
-
 from .base_page import BasePage
 from .locators import ProductPageLocators
 
@@ -32,4 +30,3 @@ class ProductPage(BasePage):
     def should_be_disappeared_success_message(self):
         assert self.is_disappeared(*ProductPageLocators.ADDED_PRODUCT_NAME), \
             "Success message is presented, but should not be"
-
